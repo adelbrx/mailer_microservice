@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/adelbrx/mailer_microservice.git"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "license": "ISC",
   "author": "Ahmed Adel BEREKSI REGUIG",
   "type": "commonjs",
