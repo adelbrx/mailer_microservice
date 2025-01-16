@@ -1,0 +1,26 @@
+{
+  "name": "mailer_microservice",
+  "version": "1.0.0",
+  "description": "email manipulator",
+  "homepage": "https://github.com/adelbrx/mailer_microservice#readme",
+  "bugs": {
+    "url": "https://github.com/adelbrx/mailer_microservice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adelbrx/mailer_microservice.git"
+  },
+  "license": "ISC",
+  "author": "Ahmed Adel BEREKSI REGUIG",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "html-to-text": "^9.0.5",
+    "juice": "^11.0.0",
+    "nodemailer": "^6.9.16"
+  }
+}
