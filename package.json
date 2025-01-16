@@ -18,7 +18,7 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
+    "start": "node server.js",
     "build": "vercel build"
   },
   "dependencies": {
