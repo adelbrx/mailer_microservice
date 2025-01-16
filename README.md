@@ -17,7 +17,7 @@ The request body should be a JSON object with the following structure:
   "subject": "", // Subject of the email
   "template": "", // Email content or template (HTML AND CSS)
   "usernameReceiver": "", // Receiver's name
-  "emailReceiver": "adelbereksi1", // Receiver's email address
+  "emailReceiver": "", // Receiver's email address
   "usernameSender": "", // Sender's name
   "emailSender": "", // Sender's email address
   "passwordSender": "", // Sender's email password
