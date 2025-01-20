@@ -1,5 +1,6 @@
 const express = require("express");
 const emailRouter = require("./routes/emailRoute");
+const cors = require("cors");
 const globalErrorHandler = require("./controllers/errorController");
 
 // INITIALIZE EXPRESS APP
