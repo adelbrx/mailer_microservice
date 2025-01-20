@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 const emailRouter = require("./routes/emailRoute");
 const cors = require("cors");
 const globalErrorHandler = require("./controllers/errorController");
