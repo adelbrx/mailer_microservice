@@ -14,6 +14,7 @@ The request body should be a JSON object with the following structure:
 
 ```json
 {
+  "attachment": form-data // File of attachment
   "subject": "", // Subject of the email
   "template": "", // Email content or template (HTML AND CSS)
   "usernameReceiver": "", // Receiver's name

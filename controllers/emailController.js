@@ -3,6 +3,12 @@ const Reciever = require("../modals/emailReciever");
 const Email = require("../modals/emailModal");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
+const multer = require("multer");
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+exports.uploadAttachment = upload.single("attachment");
+
 exports.sendEmail = catchAsync(async (request, response, next) => {
   // EXTRACT DATA FROM REQUEST BODY
   const {
@@ -45,7 +51,9 @@ exports.sendEmail = catchAsync(async (request, response, next) => {
 
   const email = new Email(sender, receiver);
 
-  await email.send(template, subject);
+  const attachment = request.file;
+
+  await email.send(template, subject, attachment);
 
   response.status(200).json({
     status: "success",

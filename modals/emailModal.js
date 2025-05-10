@@ -21,7 +21,7 @@ class Email {
   }
 
   //send the actual email
-  async send(templateHTML, subject) {
+  async send(templateHTML, subject, attachment = null) {
     // INLINE CSS (OPTIONAL FOR EMAIL COMPOTIBILITY)
     const inlinedHTML = juice(templateHTML);
 
@@ -33,6 +33,15 @@ class Email {
       html: inlinedHTML,
       text: htmlToText.convert(inlinedHTML),
     };
+
+    if (attachment) {
+      mailOptions.attachments = [
+        {
+          filename: attachment.originalname,
+          content: attachment.buffer,
+        },
+      ];
+    }
 
     // CREATE A TRANSPORT AND SEND EMAIL
     await this.createTransport().sendMail(mailOptions);
