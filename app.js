@@ -28,10 +28,6 @@ app.use(
   })
 );
 
-// Allow large payloads (up to 10MB)
-app.use(express.json({ limit: "10mb" }));
-app.use(express.urlencoded({ extended: true, limit: "10mb" }));
-
 // CORS Preflight (important for Vercel)
 app.options("*", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
@@ -41,7 +37,9 @@ app.options("*", (req, res) => {
 });
 
 // CONVERT JSON TO JAVASCRIPT OBJECT
-app.use(express.json());
+// Allow large payloads (up to 10MB)
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // ROUTES
 app.use("/api/email", emailRouter.router);
